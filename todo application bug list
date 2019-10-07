@@ -3,7 +3,27 @@
 ----------------------------
 
 1. The application can be empty.
+Expected: application should not be empty and return instruction to deny deleting last item left on list.
+Actual: application loads with empty list and can delete all items until it empty.
+Reproduce: add some items and delete them all.
+
+
 2. The submit button can not return any instructive error if pressed without any input.
+Expected: when clicking the submit button without any data entered on text box it should return error pop up saying nothing was entered.
+Actual: the application give no respond.
+Reproduce: click submit button on the application without entering any data.
+
 3. The update button remove todo item with empty string, if there is no data entered and click update this lead to removing old todo item with nothing.
+Expected: when clicking update button while text box is empty application must prompt to enter new string to update with.
+Actual: the old item name is removed and left empty.
+Reproduce: on the existing item list, click update button without entering new item name.
+
 4. The application takes duplicates items.
-5. item name accept any character like special characters ('',!#$%^&*?":`").
+Expected: when the item already exist in a list, the application should not allow duplicate to be added.
+Actual: the same item name / string can be entered more than once.
+Reproduce: add the same string as any of the existing items and and click submit.
+
+5. item name can be any character like special characters ('',!#$%^&*?":`").
+Expected: item names should be alphanumeric string.
+Actual: the item name accept special characters.
+Reproduce: enter an item name as combination of special characters then click submit.
