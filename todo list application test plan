@@ -1,0 +1,242 @@
+-------------------------------------------------------------------------------------------------------------------
+======================================== TODO LIST APPLICATION TEST PLAN ==========================================
+ 										---------------------------------
+
+#Document Purpose
+- The aim of this document is to record the testing plan to be followed while validating and verifying the todolist
+  application functional and non functional requirements. 
+
+- This document identifies the approach, schedules and items for testing to be performed. Breakdown test strategy 
+  within scope of business requirements of expected product to be delivered. The environments setup / prerequisites
+  overview further towards detailed test cases that requires testing on this product will be given.							 
+
+
+#Project Overview
+- All testing process to be carried per application policy and srategy. 
+- This tes plan is written inorder to define in details the testing process, tools to be utilized throughout projet 
+  lifecycle of todolist application. The changes to come through in a project will evolve  testing process with that
+  nature, so this document will be updated periodically to reflect amendmendts to areas such as test items, project 
+  strategy to add changes into functionality testing scope.
+
+
+#Objectives
+- The primary objectives of testing under this test plan are:
+	* To ensure functionality of todolist application is per business requirements and functional specification.
+	* To identify the documents and product that will form the basis of test scripts.
+	* To define and outline additional test conditions to be executed that are not derived directly from documents and 
+	  products above.
+	* To specifying different types of testing that will be undertaken and give an overview on how these tests will be 
+	  executed.
+	* As addition. To review user manual for module under development and identify potential end user training needs.
+
+
+#Scope
+- The in scope of project is to ensure that todolist application operate as per business requirements functional 
+  specification for a release including:
+	1. Application must be able to deploy in docker
+	2. Multiple users should be able to view the shared public todo list (no live updates, only on refresh)
+	3. Todo list items should persist after browser refresh
+	4. Todo items should not be able to be empty
+	5. Should be able to add todo items
+	6. Should be able to delete todo items
+	7. Should be able to edit todo items
+	
+- The out of scope of project is anythisng that won't be tested for dolist application (functional and non functional)
+  in a planned release:
+	1. The application (frontend only) should be ported to Cordova and run as a mobile application.
+	2. The application backend should run in Kubernetes on a 3 node cluster with multiple replicas of each pod.
+	  - Should be able to do rolling updates on the backend service without downtime
+	  - Application should be self healing after network issues, node outages, node restarts and other issues
+
+
+#Features to be Tested
+
+   Test Feature						             Test Items 							        Test Type						                 Test Channel
+-----------------------------------------------------------------------------------------------------------------------------
+1. Docker application configured	     Component Test		    			Performance testing		          				Portal & API
+2. The item list (Not null)			       Component Test				     	Functional testing (Validation)	     		Portal & API
+3. Add Todo Items 					           Integration test 		   		Functional testing 		           				Portal & API
+4. Delete Todo Items 				           Integration test 			  	Functional testing 			           			Portal & API
+5. Update Todo Items 				           Integration test 		   		Functional testing 		           				Portal & API
+6. Viewing todo list (multi users)	   System Tests 			    		Functional testing			           			Portal & API
+7. Keep items on refresh 			         System Tests 			      	Performance testing 			           		Portal
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+#Features no to be Tested
+
+   Test Feature			              			 Test Items 							Test Type						   Test Channel
+-----------------------------------------------------------------------------------------------------------------------------
+1. Run as mobile application 		       Component Test					System Testing				  			Portal
+2. Run multiple replica of pods	    	Component Test					Functional testing 						API
+3. Roolback updates 		          		Integration test 				Functional testing 						API
+4. Self recovery	 		             		System Tests 	 	   			Performance testing 					API
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+#Test Items
+- The referencing to the following will be shared as documentation or the links of confluence where there are located or Jira
+  board and Repository with files.
+	* Business Requirements Specification
+	* Design Specification
+	* Components Configurations
+	* Implementation Procedures (System Architecture)
+	* Training Documentation
+	* Acceptence Criteria
+	* Administration and Maintance
+
+
+#Test Environment
+- Computer to use including:
+	* RAM
+	* HDD
+	* Hardware model
+	* OS
+	* Browser version
+	* DB details 
+	* Visual machine (Y/N)
+
+
+#Test Tools
+1. Visual Studio Code
+2. Postman (API testing)
+3. IntelliJ (Java selenium)
+4. DBeaver (SQL)
+
+
+#Roles and Responsibilities
+   Full Name					Role 					Responsibility 							Contact Details						  
+-----------------------------------------------------------------------------------------------------------------------------
+1. Collin Msawakhe Ngeleka 		QA						Run day to day tests 					0769959313
+2. 
+3. 
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+#High Level Schedule
+   Milestone								Target 							Date and Time						   
+-----------------------------------------------------------------------------------------
+1. Preparation 				 			Have test pack ready 					10/ 11 / 2019							
+2. Environment preparation 				Align system versions 					TBC
+3. Execution 							Get tests results						TBC
+4. Code freeze and Regression Test 	 	SIT sign off							TBC
+5. UAT deployment 						UAT sign off							TBC
+6. Production deployment 				Ship application (back and fron end)	14 / 12 / 2019
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+#Test Approach
+- The testing will be conducted based on priority basis of features. The most valuable system features will be tested first and 
+  added to automation script to ensure proper testing while covered in regression as well.
+  1. Procedures
+  --------------
+  * Unit tests are done
+  * QA will pull the story to assign it to themselves.
+  * QA will read and understand the story and can ask the developer of changes in functionality.
+  * QA will run positive test and negative tests.
+
+  2. Standards
+  --------------
+  * Feature must meet minimum functionality designed for.
+  * Software must be maintainable to test.
+  * Feature must have efficiency.
+  * Usability should be present in a feature.
+
+  3. Techniques
+  ---------------
+  * We will cover more parts of system testing without duplicating test cases by partitioning system into equivalence sets.
+  * Boundary value analysis to minimize testing in between values but only focus on min and max values.
+  * Decision table testing to determine non applicable scenarion for todolist application.
+
+  4. Output and environment controls
+  ------------------------------------
+  * Assertions will be used to make surecorrect reflection of true data entered in system is returned.
+  * Data will be analyzed if it not being changed by system.
+  * Logging of data as per architecture will be monitored to always up and running.
+
+  5. Test data
+  --------------
+  * We will generate test data from acceptence criteria of todolist application stories.
+  * Expectation as per entered data will determine test results.
+  * Common sest data to use will be saved on excel file for automation and manual tests referencing.
+  * Test data management will be done to avoid shortage.
+  * Keep test data confidential.
+
+  6. V&V processes
+  -----------------
+  * Requirement reviewing
+  * Conduct walkthroughs
+  * Do ispections and
+  * Testing 
+
+
+
+#Phase Entry and Exit Criteria
+- The minimum requirements needed to be in place before testing commence and completion of each phase is the feauture availability
+  from the sprint planned story meaning development has been done or in process. After testing we should do sign off as per satisfaction 
+  of expected percentage rate of successful testing. 
+	Entry
+	-----
+	* todolist application requirement document is given
+	* todolist application acceptence criteria for stories are defined
+	* todolist architecture is still the same or defined if changed in proper documentation
+	* Given test data for application (portal & backend)
+
+	Exit
+	----
+	* Automation test report with evidence like screenshots and payload messages.
+	* Signed RTM by testing team manager.
+
+
+#Suspension Criteria and Resumption Requirements
+- When there are issues that blocks the completion of testing, the testing process will be paused until resumption 
+  requirements are met.
+
+  Suspension when there is:
+  ------------------------
+  * Environment instability.
+  * High severity defects.
+  * Large number of defects.
+  * Inadequate support.
+
+  Resumption when:
+  ----------------
+  * Minumum positive scenario is working.
+  * Environment is stable.
+  * Adequate support.
+
+
+#Test Deliverables
+- During testing period every end of day, sprints and pre release dates to production the following clear documentations
+  will be produced:
+  * Test specification.
+  * Testing Progress Report.
+  * Test Completion Report (Regression).
+
+
+#Possible Risks
+- Risks 						 Likelihood 					Impact 								Mitigation Plan 
+						    (1=Lowest, 5=very)
+------------------------------------------------------------------------------------------------------------------------------------------
+1. User limitation.		         3	 				Not finishing testing in time. 		  	Brief session before test execution.
+
+2. Some test process left out.   4					System not fully tested, lead into    	Always have all architecture components
+													poor unanticipated system perfomance.	up and running during testing.
+
+3. Limited test data 			 4					Delay testing / not fully test all 		Create many test scenarios for available
+													possible  combinations.					test data. 
+
+4. Environment compatibility	 1					Software not working on production.		Run the development, Testing & Production
+   (Browser, OS 'Phone & PC's)																product on docker.
+
+5. Running tests in production.	 5					Tests may not dipict true results of	Run all (functionnal and non function tests)
+													performance testing due to usage of 	on the test environment (SIT)
+													real resources / data (High Expenses).
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+#PreTesting Assumptions
+- Before testing resume, it will be assumed that test environment is available and stable to test new features that would
+  be shipped to production if they pass. 
+
