@@ -1,0 +1,9 @@
+
+#ToDo Application Bug List
+----------------------------
+
+1. The application can be empty.
+2. The submit button can not return any instructive error if pressed without any input.
+3. The update button remove todo item with empty string, if there is no data entered and click update this lead to removing old todo item with nothing.
+4. The application takes duplicates items.
+5. item name accept any character like special characters ('',!#$%^&*?":`").
